@@ -36,8 +36,7 @@ class ConvGRUCell(nn.Module):
         next_h       = torch.mul(update_gate,hidden) + (1-update_gate)*ct
         return next_h
  
-def test(num_seqs,channels_img,\
-         size_image,max_epoch,model,cuda_test): 
+def test(num_seqs,channels_img,size_image,max_epoch,model,cuda_test): 
     input_image   = torch.rand(num_seqs,1,channels_img,size_image,size_image)
     target_image  = torch.rand(num_seqs,1,channels_img,size_image,size_image)
     print('\n\n ==> Create Autograd Variables:')
