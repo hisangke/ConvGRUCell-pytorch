@@ -51,8 +51,8 @@ def test(num_seqs,channels_img,size_image,max_epoch,model,cuda_test):
         print("==> test on the GPU active")
         MSE_criterion = MSE_criterion.cuda()
     err           = 0
-    for e in xrange(max_epoch):
-        for time in xrange(num_seqs):
+    for e in range(max_epoch):
+        for time in range(num_seqs):
             h_next = model(input_gru[time], None)
             err   += MSE_criterion(h_next [0], target_gru[time])
             print(err.data[0])
